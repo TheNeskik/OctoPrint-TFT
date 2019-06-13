@@ -170,5 +170,5 @@ func (ui *UI) errToUser(err error) string {
 		)
 	}
 
-	return fmt.Sprintf("Unexpected error: %s", err)
+	return fmt.Sprintf("Unexpected error")
 }

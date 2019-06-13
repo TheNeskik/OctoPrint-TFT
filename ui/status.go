@@ -231,7 +231,7 @@ func (m *statusPanel) updateJob() {
 	m.pb.SetFraction(s.Progress.Completion / 100)
 
 	if m.UI.State.IsOperational() {
-		m.left.Label.SetLabel("Printer is ready")
+		m.left.Label.SetLabel("Imprimante prête")
 		m.finish.Label.SetLabel("-")
 		return
 	}
@@ -248,10 +248,10 @@ func (m *statusPanel) updateJob() {
 		e := time.Duration(int64(s.Progress.PrintTime) * 1e9)
 		l := time.Duration(int64(s.Progress.PrintTimeLeft) * 1e9)
 		f := time.Now().Local().Add(time.Duration(int64(s.Progress.PrintTimeLeft)) * time.Second)
-		text = fmt.Sprintf("Elapsed: %s / Left: %s", e, l)
-		finishText = fmt.Sprintf("Finish time: %s", f.Format("15:04 02-Jan-06"))
+		text = fmt.Sprintf("Ecoulé: %s / Left: %s", e, l)
+		finishText = fmt.Sprintf("Temps restant: %s", f.Format("15:04 02-Jan-06"))
 		if l == 0 {
-			text = fmt.Sprintf("Elapsed: %s", e)
+			text = fmt.Sprintf("Ecoulé: %s", e)
 		}
 	}
 	m.left.Label.SetLabel(text)

@@ -28,6 +28,8 @@ var (
 	APIKey     string
 	ConfigFile string
 	Resolution string
+	height     int
+	widyh      int
 )
 
 func init() {
