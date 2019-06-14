@@ -37,7 +37,7 @@ GtkButton {
 }
 
 
-@define-color progress_bg_color #37C8AB;
+@define-color progress_bg_color #fe3301;
 
 #PrintProg {
     color: white;
@@ -65,12 +65,12 @@ GtkButton {
     font-weight: bold;
 }
 
-@define-color progress_bg_color #ff6c00;
+@define-color progress_bg_color #fe3301;
 @define-color progress_bg_color1 #ffa666;
 
 
 progress, trough {
- min-height: 30px;
+ min-height: 15px;
  border: 1px solid shade (@progress_bg_color, 0.9);
  color: #000000;
 }
