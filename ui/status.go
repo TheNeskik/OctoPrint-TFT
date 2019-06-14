@@ -222,7 +222,7 @@ func (m *statusPanel) updateJob() {
 		return
 
 	}
-	file := "<i>File not set</i>"
+	file := "<i>Pas de fichier chargé</i>"
 	if s.Job.File.Name != "" {
 		file = filenameEllipsis_long(s.Job.File.Name)
 	}
@@ -241,9 +241,9 @@ func (m *statusPanel) updateJob() {
     finishText = fmt.Sprintf("-")
 	switch s.Progress.Completion {
 	case 100:
-		text = fmt.Sprintf("Completed in %s", time.Duration(int64(s.Job.LastPrintTime)*1e9))
+		text = fmt.Sprintf("Imprimé en %s", time.Duration(int64(s.Job.LastPrintTime)*1e9))
 	case 0:
-		text = "Warming up ..."
+		text = "Préchauffage en cours ..."
 	default:
 		e := time.Duration(int64(s.Progress.PrintTime) * 1e9)
 		l := time.Duration(int64(s.Progress.PrintTimeLeft) * 1e9)

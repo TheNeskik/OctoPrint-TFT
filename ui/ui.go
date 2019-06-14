@@ -131,7 +131,7 @@ func (ui *UI) verifyConnection() {
 	case s.Current.State.IsOffline():
 		Logger.Infof("Connection offline, connecting: %s", s.Current.State)
 		if err := (&octoprint.ConnectRequest{}).Do(ui.Printer); err != nil {
-			splash.Label.SetText(fmt.Sprintf("Error connecting to printer: %s", err))
+			splash.Label.SetText(fmt.Sprintf("Erreur de connexion"))
 		}
 	case s.Current.State.IsConnecting():
 		Logger.Infof("Waiting for connection: %s", s.Current.State)
@@ -170,5 +170,5 @@ func (ui *UI) errToUser(err error) string {
 		)
 	}
 
-	return fmt.Sprintf("Unexpected error")
+	return fmt.Sprintf("Erreur inattendu")
 }

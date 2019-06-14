@@ -39,8 +39,8 @@ func FilamentPanel(ui *UI, parent Panel) Panel {
 func (m *filamentPanel) initialize() {
 	defer m.Initialize()
 
-	m.Grid().Attach(m.createExtrudeButton("Retract", "retract.svg", -1), 1, 0, 1, 1)
-	m.Grid().Attach(m.createExtrudeButton("Extrude", "extrude.svg", 1), 4, 0, 1, 1)
+	m.Grid().Attach(m.createExtrudeButton("Retracter", "retract.svg", -1), 1, 0, 1, 1)
+	m.Grid().Attach(m.createExtrudeButton("Extruder", "extrude.svg", 1), 4, 0, 1, 1)
 
 	m.box = MustBox(gtk.ORIENTATION_VERTICAL, 5)
 	m.box.SetVAlign(gtk.ALIGN_CENTER)
@@ -54,7 +54,7 @@ func (m *filamentPanel) initialize() {
 	m.Grid().Attach(m.createToolButton(), 1, 1, 1, 1)
 	m.Grid().Attach(m.createFlowrateButton(), 3, 1, 1, 1)
 	
-	m.Grid().Attach(MustButtonImage("Back", "back.svg", m.UI.GoHistory), 4, 1, 1, 1)
+	m.Grid().Attach(MustButtonImage("Retour", "back.svg", m.UI.GoHistory), 4, 1, 1, 1)
 }
 
 func (m *filamentPanel) updateTemperatures() {
@@ -121,7 +121,7 @@ func (m *filamentPanel) createToolButton() *StepButton {
 }
 
 func (m *filamentPanel) createFlowrateButton() *StepButton {
-	b := MustStepButton("speed-step.svg", Step{"Normal", 100}, Step{"High", 125}, Step{"Slow", 75})
+	b := MustStepButton("speed-step.svg", Step{"Normal", 100}, Step{"Rapide", 125}, Step{"Lent", 75})
 	b.Callback = func() {
 		cmd := &octoprint.ToolFlowrateRequest{}
 		cmd.Factor = b.Value().(int)

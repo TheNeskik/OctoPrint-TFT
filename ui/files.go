@@ -144,7 +144,7 @@ func (m *filesPanel) addFile(b *gtk.Box, f *octoprint.FileInformation) {
 func (m *filesPanel) createLoadAndPrintButton(img string, f *octoprint.FileInformation) gtk.IWidget {
 	return MustButton(
 		MustImageFromFileWithSize(img, 20, 20),
-		PrintDialog(m.UI.w, "File loaded. Start printing?\n"+filenameEllipsis_short(f.Name), f.Path, m),
+		PrintDialog(m.UI.w, "Fichier chargé. Impression ?\n"+filenameEllipsis_short(f.Name), f.Path, m),
 	)
 }
 
@@ -203,7 +203,7 @@ func PrintDialog(parent *gtk.Window, msg string, pfad string, ma *filesPanel) fu
 func (m *filesPanel) createDeleteButton(img string, de *octoprint.FileInformation) gtk.IWidget {
 	return MustButton(
 		MustImageFromFileWithSize(img, 20, 20),
-		MustConfirmDialog(m.UI.w, "Delete file?\n"+filenameEllipsis_short(de.Name), func() {
+		MustConfirmDialog(m.UI.w, "Supprimer le fichier ?\n"+filenameEllipsis_short(de.Name), func() {
 			del := &octoprint.DeleteFileRequest{}
 			del.Location = octoprint.Local
 			del.Path = de.Path

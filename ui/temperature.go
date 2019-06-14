@@ -39,8 +39,8 @@ func TemperaturePanel(ui *UI, parent Panel) Panel {
 func (m *temperaturePanel) initialize() {
 	defer m.Initialize()
 
-	m.Grid().Attach(m.createChangeButton("Decrease", "decrease.svg", -1), 1, 1, 1, 1)
-	m.Grid().Attach(m.createChangeButton("Increase", "increase.svg", 1), 1, 0, 1, 1)
+	m.Grid().Attach(m.createChangeButton("Diminution", "decrease.svg", -1), 1, 1, 1, 1)
+	m.Grid().Attach(m.createChangeButton("Augmentation", "increase.svg", 1), 1, 0, 1, 1)
 
 	m.box = MustBox(gtk.ORIENTATION_VERTICAL, 8)
 	m.box.SetVAlign(gtk.ALIGN_CENTER)
@@ -51,8 +51,8 @@ func (m *temperaturePanel) initialize() {
 	m.amount = MustStepButton("move-step.svg", Step{"10°C", 10.}, Step{"5°C", 5.}, Step{"1°C", 1.})
 	m.Grid().Attach(m.amount, 3, 1, 1, 1)
 
-	// m.Grid().Attach(MustButtonImage("Profiles", "heat-up.svg", m.profilesPanel), 3, 1, 1, 1)
-	m.Grid().Attach(MustButtonImage("Back", "back.svg", m.UI.GoHistory), 4, 1, 1, 1)
+	// m.Grid().Attach(MustButtonImage("Profils", "heat-up.svg", m.profilesPanel), 3, 1, 1, 1)
+	m.Grid().Attach(MustButtonImage("Retour", "back.svg", m.UI.GoHistory), 4, 1, 1, 1)
 }
 
 func (m *temperaturePanel) createToolButton() *StepButton {
@@ -186,8 +186,8 @@ func (m *profilesPanel) initialize() {
 
 	m.bedTemp = MustStepButton("bed.svg", Step{"Off", 0.0}, Step{"On", 1.0})	
 	m.Grid().Attach(m.bedTemp, 2, 1, 1, 1)
-	m.Grid().Attach(MustButtonImage("Temp", "settings.svg", m.temperaturePanel), 3, 1, 1, 1)
-	m.Grid().Attach(MustButtonImage("Back", "back.svg", m.UI.GoHistory), 4, 1, 1, 1)
+	m.Grid().Attach(MustButtonImage("Temp.", "settings.svg", m.temperaturePanel), 3, 1, 1, 1)
+	m.Grid().Attach(MustButtonImage("Retour", "back.svg", m.UI.GoHistory), 4, 1, 1, 1)
 
 }
 

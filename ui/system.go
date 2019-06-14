@@ -135,7 +135,7 @@ func (m *systemPanel) createInfoBox() gtk.IWidget {
 	info.SetVAlign(gtk.ALIGN_CENTER)
 	m.addOctoPrintTFT(info)
 
-	title := MustLabel("<b>Versions Information</b>")
+	title := MustLabel("<b>Information sur la version</b>")
 	title.SetMarginTop(15)
 	title.SetMarginBottom(5)
 	info.Add(title)
@@ -184,14 +184,14 @@ func (m *systemPanel) addSystemInfo(box *gtk.Box) {
 	info := MustBox(gtk.ORIENTATION_VERTICAL, 0)
 	box.Add(info)
 
-	title := MustLabel("<b>System Information</b>")
+	title := MustLabel("<b>Informations système</b>")
 	title.SetMarginBottom(5)
 	title.SetMarginTop(15)
 	info.Add(title)
 
 	v, _ := mem.VirtualMemory()
 	info.Add(MustLabel(fmt.Sprintf(
-		"Memory Total / Free: <b>%s / %s</b>",
+		"Mémoire totale / libre: <b>%s / %s</b>",
 		humanize.Bytes(v.Total), humanize.Bytes(v.Free),
 	)))
 

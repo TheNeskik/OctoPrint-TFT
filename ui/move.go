@@ -40,7 +40,7 @@ func (m *movePanel) initialize() {
 	m.AddButton(m.createMoveButton("Y+", "move-y-.svg", octoprint.YAxis, 1))
 	m.AddButton(m.createMoveButton("Z-", "move-z-.svg", octoprint.ZAxis, -1))
 	
-	m.Grid().Attach(MustButtonImage("Back", "back.svg", m.UI.GoHistory), 4, 1, 1, 1)
+	m.Grid().Attach(MustButtonImage("Retour", "back.svg", m.UI.GoHistory), 4, 1, 1, 1)
 }
 
 func (m *movePanel) createMoveButton(label, image string, a octoprint.Axis, dir int) gtk.IWidget {

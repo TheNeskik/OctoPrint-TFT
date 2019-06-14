@@ -22,7 +22,7 @@ STRETCH_GO_TAGS := gtk_3_22
 
 # Build information
 GIT_COMMIT = $(shell git rev-parse HEAD | cut -c1-7)
-DEV_PREFIX := 0.0
+DEV_PREFIX := 0.1
 VERSION ?= $(DEV_PREFIX)~git$(GIT_COMMIT)
 BUILD_DATE ?= $(shell date --utc +%Y%m%d-%H:%M:%S)
 BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
